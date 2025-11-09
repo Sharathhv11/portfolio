@@ -2,6 +2,10 @@
 nav{
     height:100px;
     width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff00;
 }
 #nav-container{
     height:70px;
@@ -9,7 +13,6 @@ nav{
     max-width:1000px;
     min-width:200px;
     margin:10px auto;
-    border:2px solid black;
     border-radius: 45px;
     padding:0 20px;
 
@@ -35,9 +38,9 @@ nav{
     font-weight: bolder;
     color:#3e72ff;
     position:relative;
+    left:30px;
     transition:transform .5s ease-in-out;
     cursor: pointer;
-    
 
 }
 
@@ -130,8 +133,6 @@ nav{
     
     }
 
-    #nav-name-contianer span{
-    }
 
     #navigation-container{
         width:60%;

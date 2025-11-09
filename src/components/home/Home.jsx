@@ -86,6 +86,7 @@ const Home = () => {
           </button>
         </div>
       </div>
+      <div className="section-breaker"></div>
     </main>
   );
 };
