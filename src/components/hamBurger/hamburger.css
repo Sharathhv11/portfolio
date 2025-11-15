@@ -1,0 +1,9 @@
+.hamburger{
+    width:100vw;
+    height:100vh;
+    background-color: red;
+    position: absolute;
+    top:0;
+    right:100%;
+    transition: all 0.3s ease-in-out;
+}

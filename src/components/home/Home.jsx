@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { Download } from "lucide-react";
+import Study from "./Study";
 
 gsap.registerPlugin(SplitText);
 
@@ -87,6 +88,7 @@ const Home = () => {
         </div>
       </div>
       <div className="section-breaker"></div>
+      <Study/>
     </main>
   );
 };
