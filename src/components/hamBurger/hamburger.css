@@ -1,9 +1,62 @@
-.hamburger{
+menu{
     width:100vw;
-    height:100vh;
+    height:calc(100vh - 70px);
     background-color: red;
-    position: absolute;
-    top:0;
+    position: fixed;
+    top:70px;
     right:100%;
     transition: all 0.3s ease-in-out;
+    z-index: 100;
+}
+
+
+.HamBurger-navigators{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    height:50%;
+    gap:30px;
+}
+
+.HamBurger-navigators > div{
+    font-size:24px;
+    cursor:pointer;
+    transition: color 0.3s ease-in-out;
+    width: 30%;
+    text-align: center;
+    position: relative;
+    z-index: 102;
+    overflow: hidden;
+}
+
+.HamBurger-navigators > div::before{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    right:100%;
+    background-color: rgba(148, 148, 148, 0.283);
+    transition: all 0.3s ease-in-out;
+    z-index: 101;
+}
+
+.HamBurger-navigators > div:hover::before{
+    right:0;
+    z-index: -1;
+}
+
+#theme-changer-hamburger {
+    width: 40px;
+
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    position:absolute;
+    bottom:100px;
+    right:calc(50% - 20px);
 }

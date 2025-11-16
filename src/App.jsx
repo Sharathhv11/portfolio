@@ -10,7 +10,7 @@ function App(){
   return <>
       <Nav/> 
       <HamBurger/>
-      {/* <Home/> */}
+      <Home/>
     </>
   
 }

@@ -11,9 +11,11 @@ const Nav = function () {
 
   const lightCss = {
     backgroundColor: "rgba(255, 255, 255, 1)",
+    border:"1px solid rgba(0,0,0,0.1)"
   };
   const darkCss = {
-    backgroundColor: "#00000000",
+    backgroundColor: "#0b0b0cff",
+    border:"1px solid rgba(255,255,255,0.1)"
   };
 
   const resumeBtnStyleDark = {
@@ -33,9 +35,10 @@ const Nav = function () {
 
   const moonColor = theme === "light" ? "#1e1e1e" : "#6ea0ff";
   const sunColor = theme === "light" ? "#f2c20d" : "#ffffff";
+  const hamburgerColor = theme === "light" ? "#000" : "#fff";
 
   const navColor =
-    theme === "light" ? "rgba(25, 25, 25, 0.6)" : "rgba(255, 255, 255, 0.71)";
+    theme === "light" ? "rgba(25, 25, 25, 1)" : "rgba(255, 255, 255, 1)";
 
   return (
     <nav style={theme === "light" ? lightCss : darkCss}>
@@ -89,7 +92,7 @@ const Nav = function () {
           
           <ResumeDownloadBtn />
           <button id="menu-btn" onClick={handleMenuToggle}>
-            {menu ? <X /> : <Menu />}
+            {menu ? <X stroke={hamburgerColor}/> : <Menu stroke={hamburgerColor}  />}
           </button>
         </div>
       </div>
