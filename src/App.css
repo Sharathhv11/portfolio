@@ -8,9 +8,8 @@
 }
 
 body{
-    height:100%;
+    height:100vh;
     width:100%;
-    background-color: rgba(4, 4, 18, 0.989);
     min-width:300px;
     min-height: 400px;
     margin: auto;
