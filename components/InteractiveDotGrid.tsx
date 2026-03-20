@@ -3,16 +3,16 @@
 import { useEffect, useRef, useCallback } from "react";
 
 /* ─── Configuration ─── */
-const DOT_SPACING = 28;
+const DOT_SPACING = 30;
 const DOT_BASE_RADIUS = 1.2;
-const DOT_BASE_OPACITY = 0.1;
-const MOUSE_RADIUS = 280;        // wider radius of cursor influence
-const MOUSE_FORCE = 30;          // max displacement in px
-const WAVE_AMPLITUDE = 4;        // idle wave displacement
+const DOT_BASE_OPACITY = 0.05;
+const MOUSE_RADIUS = 360;        // much wider radius of cursor influence
+const MOUSE_FORCE = 40;          // max displacement in px
+const WAVE_AMPLITUDE = 6;        // idle wave displacement
 const WAVE_SPEED = 0.0006;       // idle wave speed
-const WAVE_LENGTH = 200;         // wave wavelength in px
-const RETURN_EASE = 0.06;        // smoother return easing
-const DAMPING = 0.82;            // fluid damping factor
+const WAVE_LENGTH = 180;         // wave wavelength in px
+const RETURN_EASE = 0.05;        // smoother return easing
+const DAMPING = 0.85;            // fluid damping factor
 
 /* ─── Hover Accent Color (muted electric blue) ─── */
 const ACCENT_R = 59;
@@ -124,16 +124,28 @@ export default function InteractiveDotGrid() {
             dot.x += dot.vx;
             dot.y += dot.vy;
 
+            const isDark = document.documentElement.classList.contains('dark');
+            const baseColor = isDark ? 255 : 0;
+            const idleOpacity = isDark ? 0.03 : 0.05; // Stealthy dark mesh
+
             /* distance-based opacity & color (dots near cursor tint blue) */
-            let opacity = DOT_BASE_OPACITY;
-            let r = 0, g = 0, b = 0;
+            let opacity = idleOpacity;
+            let r = baseColor, g = baseColor, b = baseColor;
             if (distSq < radiusSq) {
-                const proximityFactor = 1 - Math.sqrt(distSq) / MOUSE_RADIUS;
-                const colorBlend = proximityFactor * proximityFactor; // quadratic for subtlety
-                opacity = DOT_BASE_OPACITY + proximityFactor * 0.2;
-                r = Math.round(colorBlend * ACCENT_R);
-                g = Math.round(colorBlend * ACCENT_G);
-                b = Math.round(colorBlend * ACCENT_B);
+                const dist = Math.sqrt(distSq);
+                const proximityFactor = 1 - (dist / MOUSE_RADIUS);
+                const intensity = proximityFactor * proximityFactor; // High intensity at core
+                
+                opacity = idleOpacity + intensity * 0.9; // Spikes to >0.9 opacity centrally
+                
+                // Colors blend from base to a bright vibrant accent
+                const glowR = Math.min(255, ACCENT_R + intensity * 40);
+                const glowG = Math.min(255, ACCENT_G + intensity * 40);
+                const glowB = Math.min(255, ACCENT_B + intensity * 40);
+
+                r = Math.round(baseColor + proximityFactor * (glowR - baseColor));
+                g = Math.round(baseColor + proximityFactor * (glowG - baseColor));
+                b = Math.round(baseColor + proximityFactor * (glowB - baseColor));
             }
 
             /* draw dot */
