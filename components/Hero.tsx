@@ -44,7 +44,7 @@ const itemVariants = {
         opacity: 1,
         y: 0,
         filter: "blur(0px)",
-        transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+        transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const },
     },
 };
 
@@ -54,7 +54,7 @@ const imageVariants = {
         opacity: 1,
         scale: 1,
         filter: "blur(0px)",
-        transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.4 },
+        transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] as const, delay: 0.4 },
     },
 };
 
@@ -135,7 +135,7 @@ export default function Hero() {
                                         initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
                                         animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                                         exit={{ opacity: 0, y: -20, filter: "blur(4px)" }}
-                                        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                                        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
                                         className="text-lg sm:text-xl font-semibold cursor-blink"
                                     >
                                         {titles[titleIndex]}
