@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import InteractiveDotGrid from "@/components/InteractiveDotGrid";
+import About from "@/components/About";
+import Skills from "@/components/Skills";
 
 export default function Home() {
   return (
@@ -19,6 +21,8 @@ export default function Home() {
       </div>
       <Navbar />
       <Hero />
+      <About />
+      <Skills />
     </motion.main>
   );
 }
