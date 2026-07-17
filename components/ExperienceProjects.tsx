@@ -410,7 +410,7 @@ export default function ExperienceProjects() {
                                             </div>
                                             {ach.certificateImage && (
                                                 <button
-                                                    onClick={() => setLightboxImage(ach.certificateImage)}
+                                                    onClick={() => setLightboxImage(ach.certificateImage || null)}
                                                     className="flex items-center gap-1.5 text-xs font-semibold text-[var(--accent)] dark:text-blue-400 hover:opacity-80 transition-opacity duration-200 cursor-pointer self-start sm:ml-14"
                                                 >
                                                     <span>View Certificate</span>
