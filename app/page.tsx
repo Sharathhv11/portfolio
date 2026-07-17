@@ -6,6 +6,8 @@ import Hero from "@/components/Hero";
 import InteractiveDotGrid from "@/components/InteractiveDotGrid";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
+import ExperienceProjects from "@/components/ExperienceProjects";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
@@ -23,6 +25,8 @@ export default function Home() {
       <Hero />
       <About />
       <Skills />
+      <ExperienceProjects />
+      <Contact />
     </motion.main>
   );
 }

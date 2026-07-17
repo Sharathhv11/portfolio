@@ -26,17 +26,16 @@ import { TbBrandVscode } from "react-icons/tb";
 const containerVariants = {
     hidden: {},
     visible: {
-        transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+        transition: { staggerChildren: 0.1, delayChildren: 0.15 },
     },
 };
 
 const itemVariants = {
-    hidden: { opacity: 0, y: 30, filter: "blur(4px)" },
+    hidden: { opacity: 0, filter: "blur(8px)" },
     visible: {
         opacity: 1,
-        y: 0,
         filter: "blur(0px)",
-        transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const },
+        transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const },
     },
 };
 
@@ -86,7 +85,7 @@ const skillGroups = [
 ];
 
 const glassPanelStyle = "bg-white/30 dark:bg-white/[0.01] backdrop-blur-md border border-black/[0.06] dark:border-white/[0.08] shadow-[0_8px_30px_rgba(0,0,0,0.01)] dark:shadow-[0_8px_30px_rgba(255,255,255,0.005)] rounded-3xl p-6 sm:p-8 hover:border-black/15 dark:hover:border-white/15 transition-all duration-300";
-const glassBadgeStyle = "relative flex items-center gap-3 px-4 py-3 rounded-xl border border-black/[0.05] dark:border-white/[0.05] bg-white/20 dark:bg-white/[0.005] backdrop-blur-sm transition-all duration-300 group overflow-hidden select-none hover:-translate-y-0.5 hover:border-black/[0.1] dark:hover:border-white/[0.1]";
+const glassBadgeStyle = "relative flex items-center gap-3 px-4 py-3 rounded-xl border border-black/[0.05] dark:border-white/[0.05] bg-white/20 dark:bg-white/[0.005] backdrop-blur-sm transition-all duration-300 group overflow-hidden select-none hover:border-black/[0.1] dark:hover:border-white/[0.1] hover:shadow-[0_4px_12px_rgba(0,0,0,0.02)]";
 
 export default function Skills() {
     const sectionRef = useRef<HTMLElement>(null);

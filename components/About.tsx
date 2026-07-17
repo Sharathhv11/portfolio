@@ -7,21 +7,20 @@ import { FiMapPin, FiBookOpen, FiCpu } from "react-icons/fi";
 const containerVariants = {
     hidden: {},
     visible: {
-        transition: { staggerChildren: 0.12, delayChildren: 0.2 },
+        transition: { staggerChildren: 0.1, delayChildren: 0.15 },
     },
 };
 
 const itemVariants = {
-    hidden: { opacity: 0, y: 30, filter: "blur(4px)" },
+    hidden: { opacity: 0, filter: "blur(8px)" },
     visible: {
         opacity: 1,
-        y: 0,
         filter: "blur(0px)",
-        transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const },
+        transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const },
     },
 };
 
-const cardHoverEffects = "hover:bg-white/60 dark:hover:bg-white/[0.05] hover:border-black/15 dark:hover:border-white/15 hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_8px_30px_rgba(255,255,255,0.02)] hover:-translate-y-1 transition-all duration-300 ease-out";
+const cardHoverEffects = "hover:bg-white/60 dark:hover:bg-white/[0.04] hover:border-black/15 dark:hover:border-white/15 hover:shadow-[0_12px_40px_rgba(0,0,0,0.04)] dark:hover:shadow-[0_12px_40px_rgba(255,255,255,0.015)] transition-all duration-300 ease-out";
 const glassCardStyle = "bg-white/40 dark:bg-white/[0.02] backdrop-blur-md border border-black/[0.06] dark:border-white/[0.08] shadow-[0_8px_30px_rgba(0,0,0,0.02)] dark:shadow-[0_8px_30px_rgba(255,255,255,0.01)]";
 
 export default function About() {
